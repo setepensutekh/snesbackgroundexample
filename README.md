@@ -8,6 +8,6 @@ You can find his project here: https://github.com/nesdoug/SNES_03
 
 SS1 textures found here: https://www.systemshock.org/index.php?topic=155.0
 
-To create the .sfc file that runs on the emulator (higan/bsnes preferred for accuracy), you'll run the make file, just make it executable.
+To create the .sfc file that runs on the emulator (higan/bsnes preferred for accuracy), you'll run the make file, just make it executable. You will need the cc65 toolchain to run the compilation & linking process.
 ca65 will create an output file based on the mainSS.asm, then the ld65 command will link it the lorom256k.cfg file, and produce the final output.
 Written in 65c816 assembly, and lorom256k written in cc65 toolchain code.
