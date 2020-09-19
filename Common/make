@@ -1,0 +1,4 @@
+#!/bin/bash
+ca65 mainSS.asm -g
+ld65 -C ../Common/lorom256k.cfg -o mainSS.sfc mainSS.o -Ln labels.txt
+
