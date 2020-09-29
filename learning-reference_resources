@@ -1,0 +1,27 @@
+https://georgjz.github.io/snesaa01/
+https://nesdoug.com/2020/03/19/snes-projects/
+https://en.wikibooks.org/wiki/Super_NES_Programming/SNES_Hardware_Registers
+https://sneslab.net/wiki/PPU_Registers
+https://wiki.superfamicom.org/
+https://wiki.superfamicom.org/grog's-guide-to-dma-and-hdma-on-the-snes
+
+Core concepts to know: 
+  65816 assembly (obviously), similar to NASM in many ways (CPU stack, status flags, direct/indirect references, etc.), three general-purpose registers A,X,Y, can be 8 or 16-bit (A can also be used as 24-bit in some special cases)
+  Unique aspects of SNES palettes (2 bits per pixel, 4 bits per pixel), etc.; they are in BGR555 mode, as opposed to RGB888 how modern computers interpret color data
+  SNES graphics modes (Mode 0, Mode 1, Mode 7., etc.; Mode 1 is most common, and the Mode this project is in)
+  DMA (Direct Memory Aspect): this is the most efficient way to access and manipulate the various SNES registers;
+    e.g., instead of setting up a counter loop to write to the palette register, then increment to the next section of the register after each write, set up a single transfer with DMA
+  Learn the various registers of the SNES and what they do 
+    OAM (Object Attribute Memory, stores/updates sprite locations on screen)
+    CGRAM (Color Graphics RAM, palette data)
+    WRAM (Working RAM, cpu-local RAM)
+    VRAM (Virtual RAM, stores tile data, tilemap data, etc.)
+    
+Tools you'll need:
+  ca65 assembly toolchain (available for Linux and Windows)
+  Programming environment/text editor (I'm using Atom, but you can use whatever fits your fancy)
+  Hex Editor (not used often, but can come in handy)
+  Palette/tilemap editor (I'm using YY-CHR and MITE, Windows only)
+  Emulator (Snes9x or bsnes/higan, preferably one with debugging tools so that you can see how memory locations are being affected and what code is being run at certain breakpoints, I prefer bsnes-plus for debugging)
+  Photo workshop (GIMP, Photoshop, preferably one you can assign palettes to
+  Patience and time
